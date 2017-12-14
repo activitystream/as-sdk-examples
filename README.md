@@ -13,7 +13,7 @@ Both of these can be cloned and extended and pull-requests are welcome.
 
 * Examples are meant to be reusable (copied)
 * Examples should rely on minimum number of dependencies
-* Examples are developed as tests  
+* All examples are developed as tests  
 
 ### Contact and support
 * Feel free to create issues here or contact our [Integration Support team directly](mailto:integration-support@activitystream.com).
