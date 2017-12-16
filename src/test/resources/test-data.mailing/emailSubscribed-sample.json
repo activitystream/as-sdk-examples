@@ -1,0 +1,1 @@
+{"type":"as.crm.email.subscribed","occurred_at":"2017-03-05T21:37:09.000Z","origin":"mail.system","aspects":{"dimensions":{"list_optin":"true"},"resolvable":{"external_id":"45834911"},"client_ip":{"ip":"127.0.0.1"}},"involves":[{"ACTOR":{"entity_ref":"Email/pera.detlic@gmail.com"}},{"AFFECTS":{"entity_ref":"MailingList/2"}}]}
