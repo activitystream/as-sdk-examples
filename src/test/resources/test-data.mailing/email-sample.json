@@ -1,0 +1,22 @@
+{
+  "entity_ref": "Email/pera.detlic@gmail.com",
+  "aspects": {
+    "dimensions": {
+      "email_service": "gmail",
+      "status": "valid"
+    },
+    "presentation": {
+      "label": "Petar Pera Detlic"
+    },
+    "classification": {
+      "type": "private"
+    }
+  },
+  "relations": [
+    {
+      "PART_OF": {
+        "entity_ref": "MailingList/2"
+      }
+    }
+  ]
+}

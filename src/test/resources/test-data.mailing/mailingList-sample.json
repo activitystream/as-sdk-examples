@@ -1,0 +1,11 @@
+{
+  "entity_ref": "MailingList/2",
+  "aspects": {
+    "classification": {
+      "type": "public"
+    },
+    "presentation": {
+      "label": "CSS Website Templates Newslatters"
+    }
+  }
+}

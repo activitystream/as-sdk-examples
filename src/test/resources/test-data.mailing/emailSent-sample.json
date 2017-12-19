@@ -1,0 +1,1 @@
+{"type":"as.crm.message.email.sent","occurred_at":"2017-02-05T21:37:09.000Z","origin":"mail.system","involves":[{"ACTOR":{"entity_ref":"MailCampaign/852456"}},{"INVOLVES":{"entity_ref":"MailSubscriber/1159"}},{"INVOLVES":{"entity_ref":"Email/pera.detlic@gmail.com"}}],"aspects":{"resolvable":{"external_id":"45834911"},"client_ip":{"ip":"127.0.0.1"}}}
