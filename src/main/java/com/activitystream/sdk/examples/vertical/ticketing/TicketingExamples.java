@@ -244,8 +244,8 @@ public class TicketingExamples {
         return ticket;
     }
 
-    public static ASEvent createTransactionCompletedEvent() {
-        ASEvent transactionCompleted = new ASEvent(ASEvent.PRE.AS_COMMERCE_TRANSACTION_COMPLETED, "SpaceJam.commerce")
+    public static ASEvent createPurchaseCompletedEvent() {
+        ASEvent purchaseCompleted = new ASEvent(ASEvent.PRE.AS_COMMERCE_PURCHASE_COMPLETED, "SpaceJam.commerce")
                 .withOccurredAt("2017-12-13T10:18:27.480Z")
                 .withImportance(ImportanceLevel.IMPORTANT)
                 //Refers to entities that were previously created: Customer and Order
@@ -279,20 +279,20 @@ public class TicketingExamples {
                 .withRelationIfValid(ASConstants.REL_AFFECTS + ":CREATES", "Ticket", "852456");
         items.mergeItemLine(lineItem);
 
-        transactionCompleted.withAspect(items);
+        purchaseCompleted.withAspect(items);
 
         TrafficSourceAspect trafficSourceAspect = new TrafficSourceAspect();
         TrafficSource trafficSource = new TrafficSource()
                 .withType("direct")
                 .withSource("Telefon")
                 .withMedium("Billetto");
-        transactionCompleted.withAspect(trafficSourceAspect.addTrafficSource(trafficSource));
+        purchaseCompleted.withAspect(trafficSourceAspect.addTrafficSource(trafficSource));
 
         ClientIpAspect clientIpAspect = new ClientIpAspect();
         clientIpAspect.withIp("216.3.128.12");
-        transactionCompleted.withAspect(clientIpAspect);
+        purchaseCompleted.withAspect(clientIpAspect);
 
-        return transactionCompleted;
+        return purchaseCompleted;
     }
 
     public static ASEvent createSeatAssignedEvent() {

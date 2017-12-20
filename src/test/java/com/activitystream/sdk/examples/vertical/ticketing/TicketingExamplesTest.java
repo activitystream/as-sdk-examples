@@ -5,7 +5,6 @@ import com.activitystream.sdk.ASEvent;
 import com.activitystream.sdk.ASService;
 import net.javacrumbs.jsonunit.JsonAssert;
 import org.apache.commons.io.FileUtils;
-import org.junit.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -74,9 +73,9 @@ public class TicketingExamplesTest {
 
     @Test
     public void testCreateTransactionCompletedEvent() throws Exception {
-        ASEvent transactionCompletedEvent = TicketingExamples.createTransactionCompletedEvent();
+        ASEvent transactionCompletedEvent = TicketingExamples.createPurchaseCompletedEvent();
 
-        JsonAssert.assertJsonEquals(FileUtils.readFileToString(new File(BASE_PATH + "transactionCompleted-sample.json"), "UTF-8"), transactionCompletedEvent.toJSON());
+        JsonAssert.assertJsonEquals(FileUtils.readFileToString(new File(BASE_PATH + "purchaseCompleted-sample.json"), "UTF-8"), transactionCompletedEvent.toJSON());
     }
 
     @Test
