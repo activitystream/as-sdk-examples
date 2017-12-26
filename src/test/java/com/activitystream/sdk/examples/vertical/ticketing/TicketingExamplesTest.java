@@ -97,9 +97,5 @@ public class TicketingExamplesTest {
         ASEvent ticketUsedEvent = TicketingExamples.createTicketUsedEvent();
 
         JsonAssert.assertJsonEquals(FileUtils.readFileToString(new File(BASE_PATH + "ticketUsed-sample.json"), "UTF-8"), ticketUsedEvent.toJSON());
-
-        for (ASEvent ticketUsedEventIO : TicketingExamplesIO.createTicketUsedEvent()) {
-            JsonAssert.assertJsonEquals(FileUtils.readFileToString(new File(BASE_PATH + "ticketUsed-sample.json"), "UTF-8"), ticketUsedEventIO.toJSON());
-        }
     }
 }
