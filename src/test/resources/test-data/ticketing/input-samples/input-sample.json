@@ -1,0 +1,2 @@
+"event_id","event_name", "ticket_id", "customer_id", "customer_name", "scanned_at", "is_scanned", "gate_id", "venue_id", "venue_section_name", "section_row", "seat_number", "seat_label", "season_name", "season_id"
+"208368", "Tune Squad - Monstars", "852456", "951", "Robert King", "2017-12-13T10:18:27.496Z", "true", "055", "7856", "23", "2", "12", "Seat VIP Balcony VIP23", "2017–18 NBA season", "2017–18 NBA season", "132"
