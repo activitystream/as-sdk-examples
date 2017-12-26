@@ -13,8 +13,6 @@ import org.junit.Test;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TicketingExamplesIOTest {
 
@@ -26,8 +24,6 @@ public class TicketingExamplesIOTest {
 
     @Test
     public void createTicketUsedEvent() throws IOException {
-        List<ASEvent> eventList = new ArrayList<>();
-
         ASEvent ticketUsed = null;
 
         CSVReader csvReader = new CSVReader(new FileReader(BASE_PATH + "input-samples/input-sample.json"), ',');
@@ -48,12 +44,7 @@ public class TicketingExamplesIOTest {
                     .withRelationIfValid(ASEventRelationTypes.AFFECTS + ":" + ASConstants.REL_GRANTS_ACCES_TO, "Seat", reader.column(SampleCSVFields.venue_section_name) + "_" + reader.column(SampleCSVFields.section_row) + "_" + reader.column(SampleCSVFields.seat_number));
 
             ticketUsed.withProperties("scanned", reader.column(SampleCSVFields.is_scanned));
-
-            eventList.add(ticketUsed);
         }
-        //Array is used for cases with multiple CSV records
-        for (ASEvent ticketUsedEventIO : eventList) {
-            JsonAssert.assertJsonEquals(FileUtils.readFileToString(new File(BASE_PATH + "output-samples/ticketUsedIO-sample.json"), "UTF-8"), ticketUsedEventIO.toJSON());
-        }
+        JsonAssert.assertJsonEquals(FileUtils.readFileToString(new File(BASE_PATH + "output-samples/ticketUsedIO-sample.json"), "UTF-8"), ticketUsed.toJSON());
     }
 }
