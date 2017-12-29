@@ -253,7 +253,6 @@ public class TicketingExamples {
                 .withDescription("European Cup")
                 .withCurrency("Euro")
                 .withVariant("VIP Balcony Section 2")
-                .withPriceType("Offer/852456")
                 //Property indicates whether the ticket card is free or not
                 .withComplimentary(false)
                 .withPriceCategory("VIP")
@@ -276,7 +275,6 @@ public class TicketingExamples {
                 .withDescription("European Cup")
                 .withCurrency("Euro")
                 .withVariant("VIP Balcony Section 2")
-                .withPriceType("Offer/852456")
                 //Property indicates whether the ticket card is free or not
                 .withComplimentary(false)
                 .withPriceCategory("VIP")
@@ -290,6 +288,27 @@ public class TicketingExamples {
                 .withRelationIfValid(ASEntityRelationTypes.RATED_BY, "Offer", "852456")
                 .withRelationIfValid(ASEventRelationTypes.AFFECTS + ":CREATES", "Ticket", "456");
         itemsManager.mergeItemLine(lineItem2);
+
+        //Creates line item for each purchased ticket
+        ASLineItem lineItem3 = new ASLineItem()
+                .withProduct(ASLineItem.LINE_TYPES.PURCHASED, new ASEntity("Event", "852654"))
+                .withItemCount(1.0)
+                .withItemPrice(5.0)
+                .withDescription("European Cup")
+                .withCurrency("Euro")
+                //Property indicates whether the ticket card is free or not
+                .withComplimentary(false)
+                .withPriceCategory("Regular Early Bird")
+                .withPaymentMethod("Credit card")
+                .withValidFrom(DateTime.parse("2017-12-13T10:18:27.480Z"))
+                //Item number provided for each purchased ticket
+                .withLineId("3")
+                .withDimensions("delivery_method", "E-Ticket")
+                .withDimension("subscription", "no")
+                //Refers to entities that were previously created: Offer and Ticket
+                .withRelationIfValid(ASEntityRelationTypes.RATED_BY, "Offer", "852456")
+                .withRelationIfValid(ASEventRelationTypes.AFFECTS + ":CREATES", "Ticket", "789");
+        itemsManager.mergeItemLine(lineItem3);
 
         purchaseCompleted.withAspect(itemsManager);
 
