@@ -65,13 +65,6 @@ public class TicketingExamplesTest {
     }
 
     @Test
-    public void testCreateTicketEntity() throws Exception {
-        ASEntity ticketEntity = TicketingExamples.createTicketEntity();
-
-        JsonAssert.assertJsonEquals(FileUtils.readFileToString(new File(BASE_PATH + "ticket-sample.json"), "UTF-8"), ticketEntity.toJSON());
-    }
-
-    @Test
     public void testCreateTransactionCompletedEvent() throws Exception {
         ASEvent transactionCompletedEvent = TicketingExamples.createPurchaseCompletedEvent();
 
